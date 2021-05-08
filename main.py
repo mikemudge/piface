@@ -61,6 +61,9 @@ def main():
 
 		sleep(1)
 
+	# Final cleanup.
+	if proc:
+		proc.terminate()
 
 	print("CPU usage over time", cpuHistory)
 
