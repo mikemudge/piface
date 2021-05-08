@@ -50,14 +50,18 @@ def main():
 
 		# Pick a face and display it.
 		image = os.path.join(os.getcwd(), 'image.png')
+		newproc = None
 		if pi:
 			newproc = subprocess.Popen(('feh --hide-pointer -Z -F -x -q -B white ' + image).split(' '))
-			if proc:
-				proc.terminate()
-			proc = newproc
 		else:
 			# Laptop development
 			print("Displaying", image)
+
+		# Give it a little time to display before removing the old one.
+		sleep(0.1)
+		if proc:
+			proc.terminate()
+		proc = newproc
 
 		sleep(1)
 
