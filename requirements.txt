@@ -1,2 +1,3 @@
 requests==2.25.1
-pygame==2.0.1
+# version on pi is 1.9.2a0, but laptop is 2.0.1
+pygame
