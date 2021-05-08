@@ -8,8 +8,10 @@ def main():
 	print('Argument List:', str(sys.argv))
 
 	ip = "192.168.1.76:8085"
-	if 1 in sys.argv:
+	if len(sys.argv) > 1:
 		ip = sys.argv[1]
+
+	print('Looking at host', ip)
 
 	response = requests.get("http://" + ip + "/data.json")
 
