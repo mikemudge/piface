@@ -58,7 +58,7 @@ def main():
 			print("Displaying", image)
 
 		# Give it a little time to display before removing the old one.
-		sleep(0.1)
+		sleep(0.5)
 		if proc:
 			proc.terminate()
 		proc = newproc
