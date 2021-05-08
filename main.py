@@ -1,7 +1,8 @@
 #!python3
 import requests
-
 import sys
+from PIL import Image
+
 
 def main():
 	print("Running the piface")
@@ -15,7 +16,14 @@ def main():
 
 	response = requests.get("http://" + ip + "/data.json")
 
-	print(response.json())
+	data = response.json()
+
+	for k in data:
+		print(k)
+
+	image = Image.open('image.png')
+	image.show()
+
 	print("Finished piface")
 
 
