@@ -1,3 +1,2 @@
-Pillow==2.6.1
 requests==2.25.1
-tk==0.1.0
+pygame==2.0.1
