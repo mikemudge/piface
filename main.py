@@ -2,6 +2,7 @@
 import requests
 import subprocess
 import sys
+import os
 from time import sleep
 from PIL import Image
 
@@ -48,13 +49,14 @@ def main():
 						print(component.get('Text'), "> Load >", v.get('Text'), v.get('Value'))
 
 		# Pick a face and display it.
+		image = os.path.join(os.getcwd(), 'image.png')
 		if pi:
 			if proc:
 				proc.terminate()
-			proc = subprocess.Popen('feh --hide-pointer -Z -F -x -q -B white ~/projects/piface/image.png'.split(' '))
+			proc = subprocess.Popen(('feh --hide-pointer -Z -F -x -q -B white ' + image).split(' '))
 		else:
 			# Laptop development
-			print("Displaying image.png")
+			print("Displaying", image)
 
 		sleep(1)
 
