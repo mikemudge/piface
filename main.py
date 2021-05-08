@@ -4,7 +4,6 @@ import subprocess
 import sys
 import os
 from time import sleep
-from PIL import Image
 
 
 def main():
@@ -49,12 +48,14 @@ def main():
 						print(component.get('Text'), "> Load >", v.get('Text'), v.get('Value'))
 
 		# Pick a face and display it.
+
+		print("CPU Load =", cpuPercent)
 		image = os.path.join(os.getcwd(), 'image2.png')
 		if cpuPercent < 20:
 			image = os.path.join(os.getcwd(), 'image1.png')
-		if cpuPercent < 50:
+		if cpuPercent > 50:
 			image = os.path.join(os.getcwd(), 'image3.png')
-		if cpuPercent < 75:
+		if cpuPercent > 75:
 			image = os.path.join(os.getcwd(), 'image4.png')
 
 		newproc = None
